@@ -2,8 +2,12 @@ package cupobjects;
 import java.util.Hashtable;
 import java.io.Serializable;
 
-public class CupWorld implements Serializable {
+public class CupWorld extends CupObject implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Hashtable<CupWorldName, CupObject> database;
 	
 	public CupWorld() {

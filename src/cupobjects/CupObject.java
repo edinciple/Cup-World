@@ -1,45 +1,17 @@
 package cupobjects;
+
 import java.io.Serializable;
+import cupexceptions.CupException;
+import cupexceptions.CupMessageUnableOperationException;
 
+public class CupObject implements Serializable {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-public class CupObject implements Serializable {
-	
-	Object realObject;
-	CupObjectRoute route;
-	
-	public CupObject(Object realObject, CupObjectRoute route)
+	public CupObject send(CupMessage message) throws CupException
 	{
-		this.realObject = realObject;
-		this.route = route;
-	}
-	
-	public CupObject()
-	{
-		this(null, null);
-	}
-	
-	public Object getRealObject()
-	{
-		return this.realObject;
-	}
-	
-	public void setRealObject(Object realObject)
-	{
-		this.realObject = realObject;
-	}
-	
-	public CupObjectRoute getRoute()
-	{
-		return this.route;
-	}
-	
-	public void setRoute(CupObjectRoute route)
-	{
-		this.route = route;
-	}
-	
-	public CupObject send(CupMessage message)
-	{
-		return this.getRoute().recievedMessage(this, message);
+		throw new CupMessageUnableOperationException(message, "Not defined");
 	}
 }

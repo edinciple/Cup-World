@@ -1,22 +1,23 @@
 package cupobjects;
 import java.io.Serializable;
 
-public class CupMessage implements Serializable{
-
-	CupObject verb;
+public final class CupMessage extends CupObject implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	CupSymbolObject verb;
 	CupObject[] nouns;
-	public CupObject getVerb() {
+	
+	public CupSymbolObject getVerb() {
 		return verb;
 	}
 	public CupObject[] getNouns() {
 		return nouns;
 	}
 	
-	public CupMessage(CupObject verb, CupObject[] nouns) throws Exception
+	public CupMessage(CupSymbolObject verb, CupObject[] nouns)
 	{
-		if(!(verb.getRealObject() instanceof CupSymbol))
-			throw new Exception("Verb should point a symbol");
-		
 		this.verb = verb;
 		this.nouns = nouns;
 	}

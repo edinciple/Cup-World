@@ -2,20 +2,24 @@ package cupobjects;
 
 import java.io.Serializable;
 
-public class CupWorldName implements Serializable {
+public class CupWorldName extends CupObject implements Serializable {
 	
-	String[] parts;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	CupSymbolObject[] parts;
 	
-	public CupWorldName(String[] parts)
+	public CupWorldName(CupSymbolObject[] parts)
 	{
 		this.parts = parts;
 	}
 
-	public String[] getParts() {
+	public CupSymbolObject[] getParts() {
 		return parts;
 	}
 	
-	public String getPart(int index)
+	public CupSymbolObject getPart(int index)
 	{
 		return this.parts[index];
 	}
